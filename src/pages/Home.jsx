@@ -4,7 +4,7 @@ import wave from '../assets/wave.svg';
 const Home = () => {
     return (
         <div>
-            <div className="hero min-h-[calc(100vh-132px)] relative">
+            <div className="hero min-h-[calc(100vh-118px)] relative">
                 <div className="hero-content text-center">
                     <div className="max-w-lg space-x-4">
                         <h1 className="text-5xl font-bold">Welcome to <span className="bg-gradient-to-r from-secondarybg-gradient-to-r from-secondary via-blue-500 to-green-400 text-transparent bg-clip-text animate-gradient via-blue-500 to-green-400 text-transparent bg-clip-text bg-300% animate-gradient" >ByteBlaze</span></h1>

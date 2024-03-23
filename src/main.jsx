@@ -10,11 +10,13 @@ import MainLayouts from './Layouts/MainLayouts.jsx';
 import Home from './pages/Home.jsx';
 import Blogs from './pages/Blogs.jsx';
 import Bookmarks from './pages/Bookmarks.jsx';
+import ErrorPage from './pages/ErrorPage.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayouts></MainLayouts>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -23,6 +25,7 @@ const router = createBrowserRouter([
       {
         path: "/blogs",
         element: <Blogs></Blogs>,
+        loader: ()=> fetch('https://dev.to/api/articles?per_page=30&top=7')
       },
       {
         path: "/bookmarks",
