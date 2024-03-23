@@ -11,6 +11,9 @@ import Home from './pages/Home.jsx';
 import Blogs from './pages/Blogs.jsx';
 import Bookmarks from './pages/Bookmarks.jsx';
 import ErrorPage from './pages/ErrorPage.jsx';
+import BlogDetails from './components/Navbar/BlogDetails.jsx';
+import Content from './components/Content.jsx';
+import Author from './components/Author.jsx';
 
 const router = createBrowserRouter([
   {
@@ -19,13 +22,30 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
-        path: "/",
+        path: "",
         element: <Home></Home>,
       },
       {
         path: "/blogs",
         element: <Blogs></Blogs>,
         loader: ()=> fetch('https://dev.to/api/articles?per_page=30&top=7')
+      },
+      {
+        path: '/blog/:id',
+        element: <BlogDetails></BlogDetails>,
+        loader: ({params})=> fetch(`https://dev.to/api/articles/${params.id}`),
+        children: [
+          {
+            index: true,
+            element: <Content></Content>,
+            loader: ({params})=> fetch(`https://dev.to/api/articles/${params.id}`)
+          },
+          {
+            path: 'author',
+            element: <Author></Author>,
+            loader: ({params})=> fetch(`https://dev.to/api/articles/${params.id}`)
+          }
+        ]
       },
       {
         path: "/bookmarks",
