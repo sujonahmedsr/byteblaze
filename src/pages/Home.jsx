@@ -1,7 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigation } from "react-router-dom";
 import wave from '../assets/wave.svg';
+import Loader from "../components/Loader";
 
 const Home = () => {
+    const navigation = useNavigation();
+    if(navigation.state === 'loading') return <Loader></Loader>
     return (
         <div>
             <div className="hero min-h-[calc(100vh-118px)] relative">

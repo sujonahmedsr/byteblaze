@@ -9,7 +9,7 @@ const Content = () => {
     const { cover_image, tags, body_html} = blog;
     return (
         <div>
-            <div className="border-2 p-2 overflow-scroll">
+            <div className="border-2 p-2 overflow-hidden">
                 <div className="dark:text-gray-800">
                     <img src={cover_image} alt="" />
                 </div>
