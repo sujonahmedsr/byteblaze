@@ -19,10 +19,10 @@ const BlogCard = ({ blog, deletable, handleDelete }) => {
                         </div>
                     </Link>
                     {
-                    deletable && <div onClick={()=> handleDelete(id)} className='absolute bg-gray-800 -top-5 -right-5 cursor-pointer text-2xl text-white p-2 rounded-full'>
-                        <MdDelete />
-                    </div>
-                }
+                        deletable && <div onClick={() => handleDelete(id)} className='absolute bg-gray-800 -top-5 -right-5 cursor-pointer text-2xl text-white p-2 rounded-full'>
+                            <MdDelete />
+                        </div>
+                    }
                 </div>
             </div>
 
@@ -31,9 +31,9 @@ const BlogCard = ({ blog, deletable, handleDelete }) => {
 };
 
 BlogCard.propTypes = {
-    blog: PropTypes.object.isRequired,
-    deletable: PropTypes.bool.isRequired,
-    handleDelete:PropTypes.func.isRequired
+    blog: PropTypes.object,
+    deletable: PropTypes.bool,
+    handleDelete: PropTypes.func
 }
 
 export default BlogCard;
