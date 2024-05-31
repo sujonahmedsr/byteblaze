@@ -17,13 +17,6 @@ const Bookmarks = () => {
         setBlogs(stored);
     }
 
-    console.log(blogs);
-    console.log(blogs.length);
-
-    
-
-
-
     return (
         <div>
             {

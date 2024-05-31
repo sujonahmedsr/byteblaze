@@ -5,10 +5,10 @@ const Navbar = () => {
         <div>
             <div className="navbar bg-base-100 shadow-lg fixed z-10 px-8">
                 <div className="flex-1">
-                    <a className="btn btn-ghost normal-case  text-2xl text-secondary gap-0 ">Byte <span className="text-primary">Blaze</span></a>
+                    <a href="/" className="btn btn-ghost normal-case  text-2xl text-secondary gap-0 ">Byte <span className="text-primary">Blaze</span></a>
                 </div>
                 <div className="flex-none font-bold space-x-2">
-                    <ul className="menu menu-horizontal px-1 space-x-2">
+                    <ul className="menu hidden md:menu-horizontal px-1 space-x-2">
                         <li >
                             <NavLink to={'/'}>Home</NavLink>
                         </li>
